@@ -38,7 +38,7 @@ function addGamesToPage(games) {
         const display = `
             <img src = ${games[i].img} class="game-img" alt="image of the game">
             <p>${games[i].name}</p>
-            <p>$${games[i].pledged} pledged!</p>
+            <p>$${games[i].pledged.toLocaleString('en-US')} pledged out of their $${games[i].goal.toLocaleString('en-US')} goal</p>
         `;
         // append the game to the games-container
         game.innerHTML = display;
@@ -163,7 +163,14 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
-
+const [firstGameFunded, secondGameFunded] = sortedGames;
+console.log(firstGameFunded);
+console.log(secondGameFunded);
 // create a new element to hold the name of the top pledge game, then append it to the correct element
-
+const firstGameName = document.createElement("p");
+firstGameName.innerHTML = firstGameFunded.name;
+firstGameContainer.appendChild(firstGameName);
 // do the same for the runner up item
+const secondGameName = document.createElement("p");
+secondGameName.innerHTML = secondGameFunded.name;
+secondGameContainer.appendChild(secondGameName);
