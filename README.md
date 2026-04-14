@@ -37,7 +37,6 @@ GIF created with [LICEcap](https://www.cockos.com/licecap/)
 
 ## Notes
 
-Describe any challenges encountered while building the app.
 I spent the most time on the JavaScript portions since I know more HTML/CSS than JS, but the challenges did well to show the different ways to use JS on a simple website. I wanted to challenge myself with the implementation of the search bar, and it was mostly just a reskin of the filter buttons, but it was a good way to review event listeners and .filter() function.
 
 ## License
