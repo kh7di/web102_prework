@@ -15,7 +15,7 @@ body {
 
 .header {
     display: flex;
-    background-color: #a8dadc;
+    background-color: #aed9e0;
     padding: 1%;
     align-items: center;
     margin-left: -10px;
@@ -37,11 +37,11 @@ body {
 
 .stats-container:hover{
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    box-shadow: 0 0 30px #a8dadc;
 }
 
 .stats-card {
-    background-color: #a8dadc;
+    background-color: #aed9e0;
     border-radius: 7px;
     padding: 1%;
     margin: 1%;
@@ -67,10 +67,12 @@ body {
 }
 
 .game-card {
+    box-sizing: border-box;
     background-color: #FFFFFF;
     padding: 1%;
     margin: 1%;
     width: 300px;
+    min-height:300px;
     text-align: center;
     border-radius: 7px;
     position: relative;
@@ -91,7 +93,7 @@ body {
 .game-card:hover {
     z-index: 1;
     cursor: pointer;
-    box-shadow: 0 0 10px lightblue;
+    box-shadow: 0 0 10px #a8dadc;
     transform: scale(1.025);
 }
 
@@ -113,12 +115,12 @@ button {
     margin: 1%;
     border-radius: 7px;
     flex-grow: 1;
-    background-color: #a8dadc;
+    background-color: #aed9e0;
 }
 
 button:hover{
     cursor: pointer;
-    background-color: #b8dadc;
+    background-color: #a8dadc;
     transform: scale(1.01);
     transition: all 0.1s ease-in-out;
 }
@@ -135,6 +137,6 @@ button:hover{
 
 #search-bar:focus{
     outline: none;
-    box-shadow: 0 0 5px 1px #b8dadc; 
+    box-shadow: 0 0 5px 1px #a8dadc; 
     transform: scale(1.005);
 }
