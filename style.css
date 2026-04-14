@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 html{
     scroll-behavior: smooth;
+    padding-bottom: 5%;
 }
 
 body {
     font-family: 'Cabin';
-    background-color: #758190;
+    background-color: #e0e1dd;
 }
 
 #tentacles {
@@ -14,29 +15,19 @@ body {
 
 .header {
     display: flex;
-    background-color: lightblue;
+    background-color: #a8dadc;
     padding: 1%;
     align-items: center;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
-    justify-content:space-between; /* extra */
-}
-
-.search-box{
-    font-family: 'Cabin';
-    border: none;
-    padding: 0.5%;
-    margin-left: auto;
-    border-radius: 7px;   
-    background-color: #a8b0bc;
+    justify-content: space-between;
 }
 
 .games-nav{
-    font-size: 1.5rem;
-    margin-left: 5%;
     text-decoration: none;
     color: inherit;
+    flex-shrink: 0;
 }
 
 .stats-container {
@@ -50,7 +41,7 @@ body {
 }
 
 .stats-card {
-    background-color: #a8b0bc;
+    background-color: #a8dadc;
     border-radius: 7px;
     padding: 1%;
     margin: 1%;
@@ -59,13 +50,14 @@ body {
 }
 
 #num-contributions, #total-raised, #num-games {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #games-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
 }
 
 .game-img {
@@ -81,17 +73,37 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    position: relative;
+    transition: transform 0.1s ease-in-out;
+}
+
+.game-card #game-description{
+    display: none;
+}
+
+.game-card:hover{
+    margin-bottom: -100px;
+    & #game-description{
+        display:block;
+    }
 }
 
 .game-card:hover {
+    z-index: 1;
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    box-shadow: 0 0 10px lightblue;
+    transform: scale(1.025);
+}
+
+#game-filters{
+    display: flex;
+    flex-direction: column;
 }
 
 #button-container {         
     text-align: center;
     display:flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 button {
@@ -100,9 +112,29 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
-    flex-grow: 1;   
+    flex-grow: 1;
+    background-color: #a8dadc;
 }
 
 button:hover{
     cursor: pointer;
+    background-color: #b8dadc;
+    transform: scale(1.01);
+    transition: all 0.1s ease-in-out;
+}
+
+#search-bar{
+    font-family: 'Cabin';
+    border: none;
+    padding: 1%;
+    margin: 1%;
+    flex-grow: 1;
+    border-radius: 7px;
+    transition: transform 0.1s ease-in-out;
+}
+
+#search-bar:focus{
+    outline: none;
+    box-shadow: 0 0 5px 1px #b8dadc; 
+    transform: scale(1.005);
 }

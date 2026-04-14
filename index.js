@@ -39,6 +39,7 @@ function addGamesToPage(games) {
             <img src = ${games[i].img} class="game-img" alt="image of the game">
             <p>${games[i].name}</p>
             <p>$${games[i].pledged.toLocaleString('en-US')} pledged out of their $${games[i].goal.toLocaleString('en-US')} goal</p>
+            <p id="game-description">${games[i].description}</p>
         `;
         // append the game to the games-container
         game.innerHTML = display;
@@ -168,9 +169,31 @@ console.log(firstGameFunded);
 console.log(secondGameFunded);
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 const firstGameName = document.createElement("p");
-firstGameName.innerHTML = firstGameFunded.name;
+firstGameName.innerHTML = `${firstGameFunded.name} with <strong>${firstGameFunded.backers} backers</strong>!`;
 firstGameContainer.appendChild(firstGameName);
 // do the same for the runner up item
 const secondGameName = document.createElement("p");
-secondGameName.innerHTML = secondGameFunded.name;
+secondGameName.innerHTML = `${secondGameFunded.name} with <strong>${secondGameFunded.backers} backers</strong>!`;
 secondGameContainer.appendChild(secondGameName);
+
+/************************************************************************************
+ * Extra: filter by search
+ * Skills used: filter, event listeners
+ */
+function filterBySearch() {
+    // convert input to lowercase
+    const input = document.getElementById("search-bar").value.toLowerCase();
+    deleteChildElements(gamesContainer);
+    let matchInputGames = GAMES_JSON.filter( (game) => {
+        // filter for elements that contain input
+        return game.name.toLowerCase().includes(input)
+    });
+    if(matchInputGames.length == 0)
+        gamesContainer.innerHTML = `No games found that match your search.`;        // give a :( message when nothing is found
+    else addGamesToPage(matchInputGames);                                           // otherwise move on
+}
+
+document.getElementById("search-bar").addEventListener('keydown', (e) => {
+    // if an Enter key is hit, filter by whats in the search bar
+    if(e.key === 'Enter') filterBySearch();
+})

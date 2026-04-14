@@ -17,9 +17,11 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
-    - Made cursor switch to pointer when hovering over filter buttons
+* [X] List anything else that you can get done to improve the app functionality!
     - Added "Our Games" nav link to header
+    - Added search bar for filtering games
+    - Edited webpage colors
+    - Minor CSS edits (cursor hover, spacing, transitions, etc)
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
